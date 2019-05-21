@@ -12,10 +12,11 @@
   <body>
     <header>
       <% if signed_in? %>
-        Signed in as: <%= current_user.email %>
+        Signed in as: <%= current_user.username %>
         <%= button_to 'Sign out', sign_out_path, method: :delete %>
       <% else %>
         <%= link_to 'Sign in', sign_in_path %>
+        <%= link_to 'Sing Up', sign_up_path %>
       <% end %>
     </header>
 
@@ -27,10 +28,14 @@
       </div>
     </section>
 
+    
+    <main class="<%= controller.controller_name %>">
+      <%= yield %>
+    </main>
+
     <footer>
 
     </footer>
 
-    <%= yield %>
   </body>
 </html>
