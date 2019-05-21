@@ -18,6 +18,7 @@ gem 'hirb'
 
 
 group :development, :test do
+  gem 'seed_dump'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
