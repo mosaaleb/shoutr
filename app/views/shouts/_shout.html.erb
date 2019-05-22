@@ -1,0 +1,15 @@
+<div class="shout">
+  <p class="shout-author">
+    <%= link_to shout.username, shout.user %>
+  </p>
+
+  <p class="shout-body">
+    <%= shout.body %>
+  </p>
+
+  <p class="shout-creation-time">
+    <%= link_to shout do %>
+      <%= time_ago_in_words(shout.created_at) %> ago
+    <% end %>
+  </p>
+</div>
