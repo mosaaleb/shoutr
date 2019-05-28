@@ -1,13 +1,20 @@
 <h1>This is your newsfeed</h1>
 <div class="shout-box">
+
   <%= form_for @shout do |f| %>
-    <div class="text_field">
-      <%= f.text_area :body, placeholder: 'What\'s on your mind', require: true, rows: '10', cols: '130' %>
-    </div>
+    
+    <%= f.fields_for :content do |content_form| %>
+      <div class="text_field">
+        <%= content_form.text_area :body, placeholder: 'What\'s on your mind', require: true, rows: '10', cols: '130' %>
+      </div>
+    <% end %>
+
     <div class="submit">
       <%= f.submit 'Shout' %>
     </div>
+
   <% end %>
+
 <div>
 
 <div class="previous-shouts">
