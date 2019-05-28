@@ -16,8 +16,8 @@ class ShoutsController < ApplicationController
 
   def new_content_shout
     case params[:shout][:content_type]
-    when 'TextShout' then TextShout.new(text_shout_content_params)
-    when 'PhotoShout' then PhotoShout.new(photo_shout_content_paramas)
+      when 'TextShout' then TextShout.new(text_shout_content_params)
+      when 'PhotoShout' then PhotoShout.new(photo_shout_content_paramas)
     end
   end
 
