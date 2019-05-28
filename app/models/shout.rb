@@ -1,9 +1,8 @@
 class Shout < ApplicationRecord
   # associations
   belongs_to :user
-
+  belongs_to :content, polymorphic: true
   # validations
-  validates :body, presence: true, length: { in: 1..144 }
   validates :user, presence: true
 
   # delegations
