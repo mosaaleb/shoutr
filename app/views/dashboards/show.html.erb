@@ -1,8 +1,9 @@
 <h1>This is your newsfeed</h1>
-<div class="shout-box">
 
+<div class="text-shout-box">
   <%= form_for @shout do |f| %>
     
+    <%= f.hidden_field :content_type, value: 'TextShout' %>
     <%= f.fields_for :content do |content_form| %>
       <div class="text_field">
         <%= content_form.text_area :body, placeholder: 'What\'s on your mind', require: true, rows: '10', cols: '130' %>
@@ -14,8 +15,25 @@
     </div>
 
   <% end %>
-
 <div>
+
+<div class="photo-shout-box">
+  <%= form_for @shout do |f| %>
+    
+    <%= f.hidden_field :content_type, value: 'PhotoShout' %>
+    <%= f.fields_for :content do |content_form| %>
+      <div class="text_field">
+        <%= content_form.file_field :image %>
+      </div>
+    <% end %>
+
+    <div class="submit">
+      <%= f.submit 'Shout' %>
+    </div>
+
+  <% end %>
+<div>
+
 
 <div class="previous-shouts">
   <%= render @shouts %>

@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'clearance'
 gem 'hirb'
-
+gem 'paperclip'
 
 group :development, :test do
   gem 'seed_dump'
