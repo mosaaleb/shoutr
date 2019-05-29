@@ -1,4 +1,7 @@
 <div class="shout">
+  <div class="avatar">
+    <%= avatar(shout.user) %>
+  </div>
   <p class="shout-author">
     <%= link_to shout.username, shout.user %>
   </p>
