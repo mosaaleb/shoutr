@@ -1,10 +1,13 @@
 <div class="shout">
+  <div class="avatar">
+    <%= avatar(shout.user) %>
+  </div>
   <p class="shout-author">
     <%= link_to shout.username, shout.user %>
   </p>
 
   <p class="shout-body">
-    <%= shout.content.body %>
+    <%= render shout.content %>
   </p>
 
   <p class="shout-creation-time">

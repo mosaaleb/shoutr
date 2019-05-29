@@ -1,0 +1,19 @@
+.shout {
+  border-left: .3em solid #222222;
+  margin-top: 2em;
+  padding: 1em;
+    
+  .avatar {
+    float: left;
+    padding: .3em;
+  }
+
+  .profile-image {
+    border-radius: 50%;
+  }
+
+  .shout-creation-time {
+    overflow: hidden;
+  }
+
+}
