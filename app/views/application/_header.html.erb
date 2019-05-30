@@ -1,9 +1,13 @@
 <header>
-  <% if signed_in? %>
-    Signed in as: <%= current_user.username %>
-    <%= link_to 'Sign out', sign_out_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Sign in', sign_in_path %>
-    <%= link_to 'Sing Up', sign_up_path %>
-  <% end %>
+
+  <ul class="header-nav-links">
+    <% if signed_in? %>
+      <li><%= link_to current_user.username, current_user %></li>
+      <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'Sign In', sign_in_path %></li>
+      <li><%= link_to 'Sign Up', sign_up_path %></li>
+    <% end %>
+  </ul>
+  
 </header>

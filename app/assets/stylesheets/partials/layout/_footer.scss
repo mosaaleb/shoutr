@@ -6,21 +6,20 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  padding-bottom: 60px;
+  margin-bottom: $footer-height;
 }
 
 .footer {
+  color: #fff;
+  text-align: center;
+  background-color: #20639b;
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #20639b;
-
-  h1 {
-    font-size: 2em;
-  }
+  padding: 10px 0;
+  height: $footer-height;
+  line-height: $footer-height / 2;
 }
 
 
