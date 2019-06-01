@@ -9,9 +9,16 @@ class User < ApplicationRecord
   
   has_many :followships, foreign_key: :follower_id
   has_many :followed_users, through: :followships
+  
+  has_many :followerships, 
+    foreign_key: :followed_user_id,
+    class_name: 'Followship',
+    dependent: :destroy
+  has_many :followers, through: :followerships
 
   # Validations
   validates :username, presence: true, uniqueness: true
+
   
   # Delegations
   
@@ -49,4 +56,5 @@ class User < ApplicationRecord
   
 
   # Private Methods
+  
 end
