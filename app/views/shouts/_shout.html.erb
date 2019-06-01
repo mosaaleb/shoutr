@@ -2,6 +2,7 @@
   <div class="avatar">
     <%= avatar(shout.user) %>
   </div>
+
   <p class="shout-author">
     <%= link_to shout.username, shout.user %>
   </p>
@@ -15,4 +16,11 @@
       <%= time_ago_in_words(shout.created_at) %> ago
     <% end %>
   </p>
+
+
+  <div class="likesbox">
+    <%= likes_counter(shout) %>
+    <%= like_button(shout) %>
+  </div>
+
 </div>

@@ -1,10 +1,24 @@
 class Shout < ApplicationRecord
-  # associations
+  # Includes
+  
+  # Associations
   belongs_to :user
   belongs_to :content, polymorphic: true
-  # validations
+  
+  # Validations
   validates :user, presence: true
-
-  # delegations
+  
+  # Delegations
   delegate :username, to: :user
+  
+  # Callbacks
+  
+  # Scopes
+  
+  # Class Methods
+
+  # Instance Methods
+
+  # Private Methods
+  
 end

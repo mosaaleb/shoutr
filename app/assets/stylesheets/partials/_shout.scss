@@ -1,20 +1,52 @@
 .shout {
-  height: 90px;
-  margin-top: 10px;
-  border-left: 3px solid #222222;
-  padding: 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #777;
+  height: auto;
+  margin: 10px;
+  padding: 12px;
+
     
   .avatar {
-    float: left;
+    display: inline;
     padding: 5px;
+    
+    .profile-image {
+      border-radius: 50%;
+      vertical-align: top;
+    }
   }
 
-  .profile-image {
-    border-radius: 50%;
+  .shout-author {
+    font-size: 20px;
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: top;
+    line-height: 80px;
+
+    a {
+      color: #000;
+    }
+  }
+
+  .shout-body {
+    padding-top: 5px;
+    font-size: 18px;
   }
 
   .shout-creation-time {
-    overflow: hidden;
+    font-size: 0.8em;
+    padding: 8px 0;
+    border-bottom: 1px solid #aaa;
+
+    a { 
+      color: #666;
+    }
+  }
+
+  .like-btn {
+    display: inline-block;
+    margin-top: 10px;
   }
 
 }
