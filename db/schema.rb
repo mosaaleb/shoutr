@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_210145) do
+ActiveRecord::Schema.define(version: 2019_06_01_062027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "followships", force: :cascade do |t|
+    t.bigint "followed_user_id", null: false
+    t.bigint "follower_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_user_id", "follower_id"], name: "index_followships_on_followed_user_id_and_follower_id", unique: true
+    t.index ["followed_user_id"], name: "index_followships_on_followed_user_id"
+    t.index ["follower_id"], name: "index_followships_on_follower_id"
+  end
 
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
@@ -63,6 +73,8 @@ ActiveRecord::Schema.define(version: 2019_05_30_210145) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "followships", "users", column: "followed_user_id"
+  add_foreign_key "followships", "users", column: "follower_id"
   add_foreign_key "likes", "shouts"
   add_foreign_key "likes", "users"
   add_foreign_key "shouts", "users"
