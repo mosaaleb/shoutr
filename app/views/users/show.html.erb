@@ -5,8 +5,7 @@
   <%= follow_button @user %>
   <div class="followship-counter">
     <small>
-      <%#= link_to 'Following', user_followings_path(@user) %>
-      Following: 
+      <%= link_to 'Following', user_followings_path(@user) %>
       <%= @user.followed_users_count %>
     </small>
     <small>

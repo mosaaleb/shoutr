@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'followings/index'
   get 'followers/index'
   get 'homes/show'
   constraints Clearance::Constraints::SignedIn.new do
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   resource :session, controller: "clearance/sessions", only: [:create]
 
   resources :users, only: [:create, :show] do
+    resources :followings, only: [:index]
     resources :followers, only: [:index]
     member do
       post 'follow', to: 'followed_users#create'
