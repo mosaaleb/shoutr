@@ -54,6 +54,9 @@ class User < ApplicationRecord
     liked_shout_ids.include?shout.id
   end
   
+  def newsfeed_shouts
+    Shout.where(user_id: followed_user_ids)
+  end
 
   # Private Methods
   

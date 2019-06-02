@@ -12,8 +12,9 @@ class Shout < ApplicationRecord
   delegate :username, to: :user
   
   # Callbacks
-  
+
   # Scopes
+  default_scope { order(created_at: :desc) }
   
   # Class Methods
 
